@@ -2,35 +2,39 @@ window.onload = init;
 function init(){
     var picNo = 1;
     var myImg = [];
+    var myNo = document.getElementById("no");
+    var myPict = document.getElementById("pict");
+    var revBtn = document.getElementById("rev_btn");
+    var fwdBtn = document.getElementById("fwd_btn");
 
     for(var i = 0; i < 4; i++){
         myImg[i] = document.createElement("img");
         myImg[i].src = "img/" + ( i + 1 ) + ".jpg";
     }
     function showImg(){
-        document.getElementById("no").innerHTML="No." + picNo;
-        document.getElementById("pict").src=myImg[picNo - 1].src;
+        myNo.innerHTML="No." + picNo;
+        myPict.src=myImg[picNo - 1].src;
     }
-    document.getElementById("rev_btn").onclick = revBtnClick;
-    document.getElementById("fwd_btn").onclick = fwdBtnClick;
+    revBtn.onclick = revBtnClick;
+    fwdBtn.onclick = fwdBtnClick;
     function revBtnClick(){
         picNo--;
         showImg();
         if(picNo === 1){
-            document.getElementById("rev_btn").disabled=true;
+            revBtn.disabled=true;
         }else if(picNo === myImg.length - 1){
-            document.getElementById("fwd_btn").disabled=false;
-            document.getElementById("no").className="no1";
+            fwdBtn.disabled=false;
+            myNo.className="no1";
         }
     }
     function fwdBtnClick(){
         picNo++;
         showImg();
         if(picNo === myImg.length){
-            document.getElementById("no").className="no2";
-            document.getElementById("fwd_btn").disabled=true;
+            fwdBtn.disabled=true;
+            myNo.className="no2";
         }else if(picNo === 2){
-            document.getElementById("rev_btn").disabled=false;
+            revBtn.disabled=false;
         }
     }
 }
