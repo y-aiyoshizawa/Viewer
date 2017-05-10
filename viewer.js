@@ -1,5 +1,4 @@
-window.onload = init;
-function init(){
+window.onload = function (){
     var picNo = 1;
     var myImg = [];
     var myNo = document.getElementById("no");
@@ -15,9 +14,7 @@ function init(){
         myNo.innerHTML="No." + picNo;
         myPict.src=myImg[picNo - 1].src;
     }
-    revBtn.onclick = revBtnClick;
-    fwdBtn.onclick = fwdBtnClick;
-    function revBtnClick(){
+    revBtn.addEventListener("click",function (){
         picNo--;
         showImg();
         if(picNo === 1){
@@ -26,8 +23,8 @@ function init(){
             fwdBtn.disabled=false;
             myNo.className="no1";
         }
-    }
-    function fwdBtnClick(){
+    },false);
+    fwdBtn.addEventListener("click",function (){
         picNo++;
         showImg();
         if(picNo === myImg.length){
@@ -36,5 +33,5 @@ function init(){
         }else if(picNo === 2){
             revBtn.disabled=false;
         }
-    }
+    },false);
 }
