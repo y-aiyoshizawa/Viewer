@@ -19,13 +19,15 @@ html {
     background-color: #fff;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
 }
-
+#slideShow{
+    height: 300px;
+}
 #slideShow img{
 	/* 全てを非表示にして、画像を重ねる */
 	display:none;
 	position: absolute;
 }
-#slideShow .img{
+#slideShow img:nth-of-type(1){
 	/* 1枚目の画像だけ表示 */
 	display:block;
 }

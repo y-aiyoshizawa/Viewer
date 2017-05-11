@@ -1,37 +1,38 @@
+var picLength;
 window.onload = function (){
-    var picNo = 1;
+
     var myImg = [];
     var myNo = document.getElementById("no");
     var myPict = document.getElementById("pict");
     var revBtn = document.getElementById("rev_btn");
     var fwdBtn = document.getElementById("fwd_btn");
+    var slideShow = document.getElementById("slideShow");
+    var idx = 3;
 
     for(var i = 0; i < 4; i++){
         myImg[i] = document.createElement("img");
         myImg[i].src = "img/" + ( i + 1 ) + ".jpg";
-    }
-    function showImg(){
-        myNo.innerHTML="No." + picNo;
-        myPict.src=myImg[picNo - 1].src;
+        slideShow.appendChild(myImg[i]);
     }
     revBtn.addEventListener("click",function (){
-        picNo--;
-        showImg();
-        if(picNo === 1){
-            revBtn.disabled=true;
-        }else if(picNo === myImg.length - 1){
-            fwdBtn.disabled=false;
-            myNo.className="no1";
-        }
+        btnClick(-1);
     },false);
     fwdBtn.addEventListener("click",function (){
-        picNo++;
-        showImg();
-        if(picNo === myImg.length){
-            fwdBtn.disabled=true;
-            myNo.className="no2";
-        }else if(picNo === 2){
-            revBtn.disabled=false;
-        }
+        var idx2 = (idx + 1) % 4;
+        $("#slideShow > img:eq("+idx+")").fadeOut();
+        $("#slideShow > img:eq("+idx2+")").fadeIn();
+        idx = (idx + 1) % 4;
+
     },false);
+}
+
+
+function btnClick(offset) {
+    idx = (idx + offset) % 4;
+    var idx2 = (idx + offset) % 4;
+
+    $("#slideShow > img:eq("+idx+")").fadeOut();
+    $("#slideShow > img:eq("+idx2+")").fadeIn();
+
+
 }
