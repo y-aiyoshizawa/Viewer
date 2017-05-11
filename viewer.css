@@ -1,3 +1,6 @@
+html {
+    background-color: #e6e6e6;
+}
 ﻿.no1 {
   color: green;
 }
@@ -5,4 +8,14 @@
 .no2 {
   color: red;
   text-shadow: 2px 2px 1px rgba(255,0,0,0.5);
+}
+#header{
+   background-color: #000 ;
+}
+#header h1{
+   color: #fff;
+}
+#contents {
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
 }

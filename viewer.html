@@ -3,13 +3,20 @@
 <head>
     <meta charset="utf-8">
     <title>簡易画像ビューワ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/css/uikit.min.css" />
     <link rel="stylesheet" href="viewer.css">
     <script src="viewer.js"></script>
 </head>
 <body>
-    <img id="pict" src="img/1.jpg">
-    <div id="no" class="no1">No.1</div>
-    <button disabled="true" id="rev_btn">←</button>
-    <button id="fwd_btn">→</button>
+    <header id="header" class="uk-heading-primary uk-padding-small uk-text-muted">
+        <h1 class="uk-margin-left">簡易画像ビューワ</h1>
+    </header>
+    <div id="contents" class="uk-container uk-padding uk-margin-top">
+        <h2 class="uk-heading-bullet">ビューワ</h2>
+        <img id="pict" src="img/1.jpg">
+        <div id="no" class="no1">No.1</div>
+        <button disabled="true" id="rev_btn" class="uk-button uk-button-default uk-button-small">←</button>
+        <button id="fwd_btn" class="uk-button uk-button-default uk-button-small">→</button>
+    </div>
 </body>
 </html>
