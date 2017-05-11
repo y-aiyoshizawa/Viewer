@@ -5,6 +5,10 @@
     <title>簡易画像ビューワ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/css/uikit.min.css" />
     <link rel="stylesheet" href="viewer.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>butes are
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/js/uikit-icons.min.js"></script>
     <script src="viewer.js"></script>
 </head>
 <body>
@@ -13,7 +17,11 @@
     </header>
     <div id="contents" class="uk-container uk-padding uk-margin-top">
         <h2 class="uk-heading-bullet">ビューワ</h2>
-        <img id="pict" src="img/1.jpg">
+        <div id="slideShow">
+            <img class="pict" src="img/1.jpg">
+            <img class="pict" src="img/2.jpg">
+            <img class="pict" src="img/3.jpg">
+        </div>
         <div id="no" class="no1">No.1</div>
         <button disabled="true" id="rev_btn" class="uk-button uk-button-default uk-button-small">←</button>
         <button id="fwd_btn" class="uk-button uk-button-default uk-button-small">→</button>
